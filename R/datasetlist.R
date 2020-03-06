@@ -75,9 +75,13 @@ datasetlist <- function(topic, subtopic){
 
     resources %>% filter(`Main topic`==topic)
 
+  } else if(!any(missing(topic), missing(subtopic))){
+
+    stop("Use one argument, please")
+
   } else{
 
-    print("Introduce a correct topic/subtopic, please")
+    stop("Introduce a correct topic/subtopic, please")
 
   }
 }

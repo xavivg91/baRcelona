@@ -15,9 +15,13 @@
 #'
 #' datasetlist(subtopic = c("Culture and Leisure", "Demography",
 #'                          "Education", "Employment", "Environment",
-#'                          "Housing", "Human resources", "Sport",
-#'                          "Legislation and justice", "Transport",
-#'                          "Security" , "Public sector", ...))
+#'                          "Housing", "Human resources",
+#'                          "Legislation and justice", "Participation",
+#'                          "Procurement", "Public opinion",
+#'                          "Public sector", "Science and technology",
+#'                          "Security", "Society and Welfare", "Sport",
+#'                          "Tourism", "Town planning and Infrastructures",
+#'                          "Trade", "Transport"))
 #' @details
 #' \itemize{
 #'  \item{If you want to retrieve all the current data sets
@@ -27,17 +31,20 @@
 #' you can also filter by more specific topics}
 #' }
 #' @examples
-#' # Retrieve all the current data sets
+#' # Retrieves all the current data sets
 #' datasetlist()
 #'
-#' # Show only the data set list about population
+#' # Only shows the data sets about population
 #' datasetlist(topic = "Population")
+#'
+#' # Only shows the data sets about sports
+#' datasetlist(subtopic = "Sport")
 
 datasetlist <- function(topic, subtopic){
 
   # Load libraries
-  library(jsonlite)
-  library(tidyverse)
+  suppressMessages(library(jsonlite))
+  suppressMessages(library(tidyverse))
 
   # List of current datasets and their resources
   path <- "https://opendata-ajuntament.barcelona.cat/data/api/action/current_package_list_with_resources?limit=500"
@@ -53,19 +60,24 @@ datasetlist <- function(topic, subtopic){
            Author=author) %>%
     mutate_at(c(3, 4, 5, 6, 7), as.factor)
 
+  # Function call without arguments
   if(missing(topic) && missing(subtopic)){
 
     resources
 
-  } else if(missing(topic)){
+  # Function call with the subtopic argument
+  } else if(missing(topic) && subtopic %in% levels(resources$Subtopic)){
 
     resources %>% filter(Subtopic==subtopic)
 
-  } else if(missing(subtopic)){
+  # Function call with the topic argument
+  } else if(missing(subtopic) && topic %in% levels(resources$`Main topic`)){
 
     resources %>% filter(`Main topic`==topic)
 
+  } else{
+
+    print("Introduce a correct topic/subtopic, please")
+
   }
-
 }
-

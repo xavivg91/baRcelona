@@ -48,32 +48,41 @@ datasetlist <- function(topic, subtopic){
 
   # List of current datasets and their resources
   path <- "https://opendata-ajuntament.barcelona.cat/data/api/action/current_package_list_with_resources?limit=500"
-  resources <- fromJSON(path, flatten=TRUE)$result %>%
-    select(title, id, organization.parent.description, organization.description,
+  datasetlist <- fromJSON(path, flatten=TRUE)$result %>%
+    select(title, resources, organization.parent.description, organization.description,
            fuente, department, author) %>%
     rename(Title=title,
-           ID=id,
-           `Main topic`=organization.parent.description,
+           Topic=organization.parent.description,
+           ID=resources,
            Subtopic=organization.description,
            Source=fuente,
            Department=department,
            Author=author) %>%
     mutate_at(c(3, 4, 5, 6, 7), as.factor)
 
+  for(i in 1:nrow(datasetlist)){
+
+    datasetlist$ID[[i]] <- datasetlist$ID[[i]] %>%
+      select(name, id, format, url)
+
+    names(datasetlist$ID[[i]]) <- c("Name", "ID", "Format", "URL")
+
+  }
+
   # Function call without arguments
   if(missing(topic) && missing(subtopic)){
 
-    resources
+    datasetlist
 
   # Function call with the subtopic argument
-  } else if(missing(topic) && subtopic %in% levels(resources$Subtopic)){
+  } else if(missing(topic) && subtopic %in% levels(datasetlist$Subtopic)){
 
-    resources %>% filter(Subtopic==subtopic)
+    datasetlist %>% filter(Subtopic==subtopic)
 
   # Function call with the topic argument
-  } else if(missing(subtopic) && topic %in% levels(resources$`Main topic`)){
+  } else if(missing(subtopic) && topic %in% levels(datasetlist$Topic)){
 
-    resources %>% filter(`Main topic`==topic)
+    datasetlist %>% filter(Topic==topic)
 
   } else if(!any(missing(topic), missing(subtopic))){
 

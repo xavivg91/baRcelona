@@ -27,7 +27,7 @@ datasetlist(subtopic = c("Culture and Leisure", "Demography",
 }
 \description{
 Use \code{datasetlist()} to manage the catalogue of data sets
-on the \href{https://opendata-ajuntament.barcelona.cat/en/}{Open Data BCN} website.
+on the \href{https://opendata-ajuntament.barcelona.cat/en/}{Open Data BCN website}.
 This function may have an interest for citizens to know what information is available on the
 portal and the data sets that are being added.
 }

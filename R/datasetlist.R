@@ -1,6 +1,6 @@
 #' Get the list of current data sets and their resources
 #' @description  Use \code{datasetlist()} to manage the catalogue of data sets
-#' on the \href{https://opendata-ajuntament.barcelona.cat/en/}{Open Data BCN} website.
+#' on the \href{https://opendata-ajuntament.barcelona.cat/en/}{Open Data BCN website}.
 #' This function may have an interest for citizens to know what information is available on the
 #' portal and the data sets that are being added.
 #' @param topic character
@@ -42,13 +42,12 @@
 
 datasetlist <- function(topic, subtopic){
 
-  # Load libraries
-  suppressMessages(library(jsonlite))
+  # Load library
   suppressMessages(library(tidyverse))
 
   # List of current datasets and their resources
   path <- "https://opendata-ajuntament.barcelona.cat/data/api/action/current_package_list_with_resources?limit=500"
-  datasetlist <- fromJSON(path, flatten=TRUE)$result %>%
+  datasetlist <- jsonlite::fromJSON(path, flatten=TRUE)$result %>%
     select(title, resources, organization.parent.description, organization.description,
            fuente, department, author) %>%
     rename(Title=title,
@@ -60,6 +59,7 @@ datasetlist <- function(topic, subtopic){
            Author=author) %>%
     mutate_at(c(3, 4, 5, 6, 7), as.factor)
 
+  # Select 4 fields of the ID list: Name, ID, Format and URL
   for(i in 1:nrow(datasetlist)){
 
     datasetlist$ID[[i]] <- datasetlist$ID[[i]] %>%

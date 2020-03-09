@@ -39,6 +39,12 @@
 #'
 #' # Only shows data sets about sports
 #' datasetlist(subtopic = "Sport")
+#'
+#' @importFrom magrittr %>%
+#' @importFrom rlang .data
+#' @importFrom dplyr select rename mutate_at filter
+#' @importFrom jsonlite fromJSON
+#' @export datasetlist
 
 datasetlist <- function(topic, subtopic){
 

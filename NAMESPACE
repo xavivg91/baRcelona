@@ -2,3 +2,10 @@
 
 export(datasetlist)
 export(get.csv)
+importFrom(dplyr,filter)
+importFrom(dplyr,mutate_at)
+importFrom(dplyr,rename)
+importFrom(dplyr,select)
+importFrom(jsonlite,fromJSON)
+importFrom(magrittr,"%>%")
+importFrom(rlang,.data)

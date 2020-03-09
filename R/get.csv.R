@@ -17,6 +17,7 @@
 #'
 #' # Retrieve the CSV
 #' get.csv(id = "e9d8d056-f1c9-4d38-b7ae-aedc9281417e")
+#' @export get.csv
 
 get.csv <- function(id){
 

@@ -47,7 +47,7 @@ datasetlist <- function(topic, subtopic){
   datasetlist <- jsonlite::fromJSON(path, flatten=TRUE)$result %>%
     dplyr::select(title, resources, organization.parent.description, organization.description,
            fuente, department, author) %>%
-    plyr::rename(Title=title,
+    dplyr::rename(Title=title,
            Topic=organization.parent.description,
            ID=resources,
            Subtopic=organization.description,

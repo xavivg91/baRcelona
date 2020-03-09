@@ -7,9 +7,9 @@ Authors@R:
            role = c("aut", "cre"),
            email = "x.vivancos91@hotmail.com")
 Description: baRcelona is used to consult and manage the catalogue 
-information available on the Open Data BCN portal. It also allows
-you to extract any CSV data set and load it directly in 
-your RStudio environment.
+  information available on the Open Data BCN portal. It also allows
+  you to extract any CSV data set and load it directly in 
+  your RStudio environment.
 License: MIT
 Encoding: UTF-8
 LazyData: true

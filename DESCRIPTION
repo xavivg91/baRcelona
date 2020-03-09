@@ -1,14 +1,16 @@
 Package: baRcelona
-Title: What the Package Does (One Line, Title Case)
+Title: R package to extract data from the Open Data BCN portal
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
+Authors@R:
+    person(given = "Xavier",
+           family = "Vivancos",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
+           email = "x.vivancos91@hotmail.com")
+Description: baRcelona is used to consult and manage the catalogue 
+information available on the Open Data BCN portal. It also allows
+you to extract any CSV data set and load it directly in 
+your RStudio environment.
+License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2

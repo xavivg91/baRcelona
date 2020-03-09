@@ -64,5 +64,4 @@ Easy, right?
 
 ## Data Ownership
 
-All extracted baRcelona data belong to the  
-[Open Data BCN portal](https://opendata-ajuntament.barcelona.cat/en/node).
+All extracted baRcelona data belong to the [Open Data BCN portal](https://opendata-ajuntament.barcelona.cat/en/node).

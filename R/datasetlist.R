@@ -42,28 +42,25 @@
 
 datasetlist <- function(topic, subtopic){
 
-  # Load library
-  suppressMessages(library(tidyverse))
-
   # List of current datasets and their resources
   path <- "https://opendata-ajuntament.barcelona.cat/data/api/action/current_package_list_with_resources?limit=500"
   datasetlist <- jsonlite::fromJSON(path, flatten=TRUE)$result %>%
-    select(title, resources, organization.parent.description, organization.description,
+    dplyr::select(title, resources, organization.parent.description, organization.description,
            fuente, department, author) %>%
-    rename(Title=title,
+    plyr::rename(Title=title,
            Topic=organization.parent.description,
            ID=resources,
            Subtopic=organization.description,
            Source=fuente,
            Department=department,
            Author=author) %>%
-    mutate_at(c(3, 4, 5, 6, 7), as.factor)
+    dplyr::mutate_at(c(3, 4, 5, 6, 7), as.factor)
 
   # Select 4 fields of the ID list: Name, ID, Format and URL
   for(i in 1:nrow(datasetlist)){
 
     datasetlist$ID[[i]] <- datasetlist$ID[[i]] %>%
-      select(name, id, format, url)
+      dplyr::select(name, id, format, url)
 
     names(datasetlist$ID[[i]]) <- c("Name", "ID", "Format", "URL")
 
@@ -77,20 +74,23 @@ datasetlist <- function(topic, subtopic){
   # Function call with the subtopic argument
   } else if(missing(topic) && subtopic %in% levels(datasetlist$Subtopic)){
 
-    datasetlist %>% filter(Subtopic==subtopic)
+    datasetlist %>% dplyr::filter(Subtopic==subtopic)
 
   # Function call with the topic argument
   } else if(missing(subtopic) && topic %in% levels(datasetlist$Topic)){
 
-    datasetlist %>% filter(Topic==topic)
+    datasetlist %>% dplyr::filter(Topic==topic)
 
+  # Error message if you use two input parameters
   } else if(!any(missing(topic), missing(subtopic))){
 
     stop("Use one argument, please")
 
+  # Error message if you introduce an incorrect topic/subtopic
   } else{
 
     stop("Introduce a correct topic/subtopic, please")
 
   }
+
 }

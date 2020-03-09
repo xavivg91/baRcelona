@@ -34,20 +34,20 @@ portal and the data sets that are being added.
 \details{
 \itemize{
  \item{If you want to retrieve all the current data sets
- and their resources, execute the function without arguments}
+ and their resources, execute the function without arguments.}
  \item{You can filter by topic and obtain a subset.}
  \item{If you are having difficulties finding a certain data set,
-you can also filter by more specific topics}
+you can also filter by more specific topics.}
 }
 }
 \examples{
 # Retrieves all the current data sets
 datasetlist()
 
-# Only shows the data sets about population
+# Only shows data sets about population
 datasetlist(topic = "Population")
 
-# Only shows the data sets about sports
+# Only shows data sets about sports
 datasetlist(subtopic = "Sport")
 }
 \author{

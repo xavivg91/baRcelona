@@ -10,7 +10,7 @@ get.csv(id)
 \item{id}{character}
 }
 \description{
-Use \code{get.csv()} to read any CSV data set available on the
+Use \code{get.csv()} to extract any CSV data set available on the
 \href{https://opendata-ajuntament.barcelona.cat/en/}{Open Data BCN website} and
 load it directly in your RStudio environment.
 

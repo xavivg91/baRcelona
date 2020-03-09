@@ -1,5 +1,5 @@
 #' Retrieve CSV files from the Open Data BCN portal
-#' @description  Use \code{get.csv()} to read any CSV data set available on the
+#' @description  Use \code{get.csv()} to extract any CSV data set available on the
 #' \href{https://opendata-ajuntament.barcelona.cat/en/}{Open Data BCN website} and
 #' load it directly in your RStudio environment.
 #'

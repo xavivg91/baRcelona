@@ -24,24 +24,17 @@ devtools::install_github("xavivg91/baRcelona")
 datasetlist()
 
 # You can filter by topic
-datasetlist(topic = c("Administration", "City and Services",
-                      "Economy and Business", "Population",
-                      "Territory"))
+datasetlist(topic = c("Administration", "City and Services", "Economy and Business", "Population", "Territory"))
 
-# ... and also by more specific topics
-datasetlist(subtopic = c("Culture and Leisure", "Demography",
-                         "Education", "Employment", "Environment",
-                         "Housing", "Human resources",
-                         "Legislation and justice", "Participation",
-                         "Procurement", "Public opinion",
-                         "Public sector", "Science and technology",
-                         "Security", "Society and Welfare", "Sport",
-                         "Tourism", "Town planning and Infrastructures",
-                         "Trade", "Transport"))
+# ... and you can also filter by more specific topics
+datasetlist(subtopic = c("Culture and Leisure", "Demography", "Education", "Employment", "Environment", 
+                         "Housing", "Human resources", "Legislation and justice", "Participation", "Procurement",
+                         "Public opinion", "Public sector", "Science and technology", "Security",
+                         "Society and Welfare", "Sport", "Tourism", "Town planning and Infrastructures", "Trade",
+                         "Transport"))
 ```                         
 
 * `get.csv()`, for CSV data sets.
-
 
 ## How it works
 
@@ -49,14 +42,14 @@ Let’s say we want to obtain a data set related to sports. First, we need to ex
 sports data sets available on the Open Data BCN portal.
 
 ```R
-# List of sports data sets available
+# List of sports data sets available on the portal
 datasets <- datasetlist(subtopic = "Sport")
 ```
 Once executed, check out the saved data frame and copy the resource ID of the CSV you want to consult (inside the ID column). 
 Then, paste the ID as an input argument of the `get.csv()` function. 
 
 ```R
-# Read and load the CSV data set
+# Save the CSV data set in your RStudio environment 
 sportdataset <- get.csv(id = "cd8d0d2b-b97a-4aba-b1c8-e25696379a58")
 ```
 

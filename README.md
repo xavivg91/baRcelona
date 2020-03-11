@@ -1,5 +1,7 @@
 # baRcelona
 
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+
 ## Overview
 
 * **Catalogue management**. baRcelona is used to consult and manage the catalogue information available on the [Open Data BCN portal](https://opendata-ajuntament.barcelona.cat/en/node), 
@@ -53,7 +55,7 @@ Then, paste the ID as an input argument of the `get.csv()` function.
 sportdataset <- get.csv(id = "cd8d0d2b-b97a-4aba-b1c8-e25696379a58")
 ```
 
-Easy, right?
+Easy peasy, right?
 
 ## Data Ownership
 

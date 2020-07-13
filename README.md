@@ -31,13 +31,15 @@ devtools::install_github("xavivg91/baRcelona")
 datasetlist()
 
 # You can filter by topic
-datasetlist(topic = c("Administration", "City and Services", "Economy and Business", "Population", "Territory"))
+datasetlist(topic = c("Administration", "City and Services", "Economy and Business", "Population",
+                      "Territory"))
 
 # ... and you can also filter by more specific topics
-datasetlist(subtopic = c("Culture and Leisure", "Demography", "Education", "Employment", "Environment", 
-                         "Housing", "Human resources", "Legislation and justice", "Participation", "Procurement",
-                         "Public opinion", "Public sector", "Science and technology", "Security",
-                         "Society and Welfare", "Sport", "Tourism", "Town planning and Infrastructures", "Trade",
+datasetlist(subtopic = c("Culture and Leisure", "Demography", "Education", "Employment", 
+                         "Environment", "Housing", "Human resources", "Legislation and justice",
+                         "Participation", "Procurement", "Public opinion", "Public sector",
+                         "Science and technology", "Security", "Society and Welfare", 
+                         "Sport", "Tourism", "Town planning and Infrastructures", "Trade",
                          "Transport"))
 ```                         
 

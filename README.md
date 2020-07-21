@@ -7,6 +7,9 @@
 [![HitCount](http://hits.dwyl.com/xavivg91/baRcelona.svg)](http://hits.dwyl.com/xavivg91/baRcelona)
 <!-- badges: end -->
 
+[![GitHub Xavi](https://img.shields.io/github/followers/xavivg91?label=follow&style=social)](https://github.com/xavivg91/)
+[![Twitter Follow](https://img.shields.io/twitter/follow/Xavier91vg.svg?style=social)](https://twitter.com/Xavier91vg)
+
 ## Overview
 
 * **Catalogue management**. baRcelona is used to consult and manage the catalogue information available on the [Open Data BCN portal](https://opendata-ajuntament.barcelona.cat/en/node), 

@@ -3,7 +3,7 @@
 <!-- badges: start -->
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/xavivg91/baRcelona/issues/new)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/xavivg91/baRcelona/issues/new)
 [![HitCount](http://hits.dwyl.com/xavivg91/baRcelona.svg)](http://hits.dwyl.com/xavivg91/baRcelona)
 <!-- badges: end -->
 
